@@ -1,0 +1,14 @@
+{
+  "name": "SxCrmUI",
+  "private": true,
+  "version": "0.0.1",
+  "description": "An awesome SpoonX app",
+  "keywords": [],
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+  },
+  "author": "scrunshes",
+  "license": "MIT"
+}
