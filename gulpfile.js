@@ -9,7 +9,7 @@ var gulp      = require('gulp'),
     options;
 
 //styles
-gulp.task('styleDeps', function(cb) {
+gulp.task('styleDeps', function (cb) {
   options = {
     in     : 'src/styles/main.less',
     out    : 'build/styles/main.less',
@@ -31,24 +31,24 @@ gulp.task('styleDeps', function(cb) {
   });
 });
 
-gulp.task('style', function() {
+gulp.task('style', function () {
   return gulp.src('build/styles/main.less')
               .pipe(less())
               .pipe(minifyCSS())
               .pipe(gulp.dest('build/styles'));
 });
 
-gulp.task('styleClean', function(cb) {
+gulp.task('styleClean', function (cb) {
   return gulp.src('build/styles/main.less', {read: false})
               .pipe(clean());
 });
 
-gulp.task('styleProcess', function(cb){
+gulp.task('styleProcess', function (cb){
   return run('scriptDeps', 'style', 'styleClean', cb);
 });
 
 //scripts
-gulp.task('scriptDeps', function(cb) {
+gulp.task('scriptDeps', function (cb) {
   options = {
     in     : 'src/scripts/main.js',
     out    : 'build/scripts/main.js',
@@ -67,17 +67,17 @@ gulp.task('scriptDeps', function(cb) {
   });
 });
 
-gulp.task('script', function(cb) {
+gulp.task('script', function (cb) {
   return gulp.src('build/scripts/main.js')
               .pipe(minifyJS())
               .pipe(gulp.dest('build/scripts'));
 });
 
-gulp.task('scriptProcess', function(cb) {
+gulp.task('scriptProcess', function (cb) {
   return run('scriptDeps', 'script', cb)
 });
 
 //default
-gulp.task('default', function(cb) {
+gulp.task('default', function (cb) {
   return run(['scriptProcess', 'styleProcess'], cb);
 });
