@@ -44,7 +44,7 @@ gulp.task('styleClean', function (cb) {
 });
 
 gulp.task('styleProcess', function (cb){
-  return run('scriptDeps', 'style', 'styleClean', cb);
+  return run('styleDeps', 'style', 'styleClean', cb);
 });
 
 //scripts
