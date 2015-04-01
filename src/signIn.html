@@ -1,0 +1,17 @@
+<template>
+  <section class="container text-center signIn">
+    <h1 class="title">SpoonX CRM</h1>
+    <div class="alert alert-warning" role="alert" show.bind="isAuthFailed">
+      It seems like you made a little typo...please try again :-)
+    </div>
+    <form role="form" class="signInForm" submit.delegate="signIn()">
+      <div class="form-group">
+        <input type="email" class="form-control" id="inputEmail" value.bind="email" placeholder="Enter email" autofocus>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="inputPassword" value.bind="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-default">Sign In</button>
+    </form>
+  </section>
+</template>
